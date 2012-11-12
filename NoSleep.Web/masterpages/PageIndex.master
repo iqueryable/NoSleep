@@ -1,0 +1,36 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>No Sleep</title>
+    <link type="text/css" href="/css/site.css" rel="stylesheet">
+</head>
+<body>
+    <div id="header">
+        <a href="/"><img src="/content/logo.png" alt="No Sleep"></a>
+    </div>
+    <div id="main">
+        <umbraco:Macro Alias="Navigation" runat="server" />
+        <div id="content">
+            <umbraco:Macro Alias="Clients" runat="server" />
+        </div>
+        <div class="clear"></div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="/js/jquery.tinyscrollbar.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.scrollpanel').each(function () {
+                var _w = 0;
+                $('.slide', this).each(function () {
+                    _w += $(this).outerWidth();
+                });
+                $('.overview', this).css('width', _w + 'px');
+            }).tinyscrollbar({
+                axis: 'x'
+            });
+        });
+    </script>
+</body>
+</html>

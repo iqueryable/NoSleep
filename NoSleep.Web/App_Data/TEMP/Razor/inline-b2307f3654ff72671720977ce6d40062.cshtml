@@ -1,0 +1,11 @@
+﻿@inherits umbraco.MacroEngines.DynamicNodeContext
+                @{
+                    var root = Model.AncestorOrSelf();
+                    var clients = root.Descendants("Client").Where("Visible");
+                    foreach (var item in clients) {
+                        var selected = Array.IndexOf(Model.Path.Split(','), item.Id.ToString()) >= 0 ? " class=\"selected\"" : "";
+                        <li@Html.Raw(selected)>
+                            <a href="@item.Url">@item.Name</a>
+                        </li>
+                    }
+                }

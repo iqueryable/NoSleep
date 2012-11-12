@@ -1,0 +1,27 @@
+﻿@inherits umbraco.MacroEngines.DynamicNodeContext
+                @{
+                    var clients = Model.AncestorOrSelf().Descendants("Client").Where("Visible");
+                    foreach (var client in clients)
+                    {
+                        <div class="scrollpanel">
+                            <div class="viewport">
+                                <div class="overview">
+                        
+                                    <div class="slide">
+                                        <span class="headline">Jesse O'Brian Branding & Website</span>
+                                        <span class="subheadline">Branding & photography for Jesse O'Brian</span>
+                                        <div class="info">
+                                            <img class="photo" src="/content/nosleep.png" alt=""/>
+                                            <div class="details">
+                                                <span class="date">February 5, 2012</span>
+                                                <span class="title">Barefoot training with a feather-like feel</span>
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla imperdiet hendrerit dignissim. Mauris porta iaculis odio in condimentum. Pellentesque leo leo, tincidunt sed euismod in, interdum et purus. Nullam adipiscing ultrices justo, ac consequat velit rhoncus eget. Nulla faucibus purus metus. Nam sem lorem, mattis eu fermentum ut, ultrices facilisis orci. Nam condimentum justo non mauris semper iaculis. Donec tristique dapibus ullamcorper.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
+                        </div>
+                    }
+                }

@@ -1,0 +1,35 @@
+﻿@inherits umbraco.MacroEngines.DynamicNodeContext
+                @{
+                    var clients = Model.AncestorOrSelf().Descendants("Client").Where("Visible");
+                    foreach (var client in clients)
+                    {
+                        <section class="client">
+                            <header>
+                                <h2>@client.Header</h2>
+                                <h3>@client.SubHeader</h3>
+                            </header>
+                            <div class="scrollpanel">
+                                <div class="viewport">
+                                    <div class="overview">
+                                        <div class="slide">
+                                            
+                                            <div class="info">
+                                                <img class="photo" src="/content/nosleep.png" alt=""/>
+                                                <div class="details">
+                                                    <span class="date">February 5, 2012</span>
+                                                    <span class="title">Barefoot training with a feather-like feel</span>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla imperdiet hendrerit dignissim. Mauris porta iaculis odio in condimentum. Pellentesque leo leo, tincidunt sed euismod in, interdum et purus. Nullam adipiscing ultrices justo, ac consequat velit rhoncus eget. Nulla faucibus purus metus. Nam sem lorem, mattis eu fermentum ut, ultrices facilisis orci. Nam condimentum justo non mauris semper iaculis. Donec tristique dapibus ullamcorper.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
+                            </div>
+                            <span class="title">Overview</span>
+                            <div class="details">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla imperdiet hendrerit dignissim. Mauris porta iaculis odio in condimentum. Pellentesque leo leo, tincidunt sed euismod in, interdum et purus. Nullam adipiscing ultrices justo, ac consequat velit rhoncus eget. Nulla faucibus purus metus. Nam sem lorem, mattis eu fermentum ut, ultrices facilisis orci. Nam condimentum justo non mauris semper iaculis. Donec tristique dapibus ullamcorper.
+                            </div>
+                        </section>
+                    }
+                }

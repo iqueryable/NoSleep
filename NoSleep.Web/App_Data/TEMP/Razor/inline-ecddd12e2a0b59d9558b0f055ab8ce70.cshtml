@@ -1,0 +1,10 @@
+﻿@inherits umbraco.MacroEngines.DynamicNodeContext
+                    @{
+                        var root = Model.AncestorOrSelf();
+                        var clients = Model.AncestorOrSelf().Descendants("Client").Where("Visible");
+                        foreach (var client in clients) {
+                            <li>
+                                <a href="#">@client.Name</a>
+                            </li>
+                        }
+                    }
